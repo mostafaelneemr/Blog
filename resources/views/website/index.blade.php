@@ -1,5 +1,9 @@
 @extends('layouts.website.master')
 
+@section('title')
+    Home Page
+@endsection
+
 @section('content')
     <!-- Page Header-->
     @foreach ($sliders as $slider)
@@ -20,14 +24,14 @@
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-8 col-lg-8 col-xl-7">
-                
+
                 <!-- Post preview-->
                 @foreach ($posts as $post)
                 <div class="post-preview">
                     <a href="{{url('post/' . $post->slug)}}">
                         <h2 class="post-title">
                             {{$post->title}}
-                        </h2> 
+                        </h2>
                         <h3 class="post-subtitle">
                             {{$post->sub_title}}
                         </h3>
@@ -37,26 +41,26 @@
                         <a href=""3>
                             {{$post->user->name}}
                         </a>
-                            
+
                         on {{date('M d,Y', strtotime($post->created_at)) }}
                         @if(count(array($post->categories)) > 0)
                             | <span class="post-category">
-                                category : 
+                                category :
                                 @foreach ($post->categories as $category)
                                 <a href="{{url('category/' . $category->slug)}}"> {{$category->name}} </a>,
                                 @endforeach
-                            </span> 
+                            </span>
                         @endif
                     </p>
                 </div>
                      <hr class="my-4" />
                 @endforeach
-                
+
                 <!-- Pager-->
                 <div class="d-flex justify-content-end mb-4">
                     {{$posts->links()}}
                 </div>
-           
+
             </div>
 
             <div class="col-lg-4 col-md-4">
@@ -69,7 +73,7 @@
                     </ul>
                 </div>
             </div>
-            
+
         </div>
     </div>
 @endsection

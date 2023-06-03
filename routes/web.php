@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 // define('PAGINATION_COUNT',10);
 Auth::routes();
 
-    Route::get('home', [WebsiteController::class , 'index'])->name('index');
+    Route::get('/', [WebsiteController::class , 'index'])->name('index');
     Route::get('category/{slug}' , [WebsiteController::class , 'category'])->name('category');
     Route::get('post/{slug}' , [WebsiteController::class , 'post'])->name('post');
     Route::get('page/{slug}' , [WebsiteController::class , 'page'])->name('page');
