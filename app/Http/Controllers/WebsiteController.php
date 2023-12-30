@@ -50,11 +50,9 @@ class WebsiteController extends Controller
     public function page($slug)
     {
         $page = Post::where('slug', $slug)->where('post_type', 'page')->where('is_published', '1')->first();
-        // if ($page) {
+
             return view('website.page', compact('page'));
-        // } else {
-        //     return \response()->view('website.errors-404', array(), 404);
-        // }
+
     }
 
     public function gallery()

@@ -472,7 +472,7 @@
                     </p>
 
                     {{--<a href="{{ app('router')->has('home') ? route('home') : url('/') }}">--}}
-                    <a href="{{ route('home') }}">
+                    <a href="{{ route('index') }}">
                         <button class="text-grey-darkest font-bold uppercase tracking-wide py-3 px-6 border-2 border-grey-light hover:border-grey rounded-lg">
                            @lang('Home')
                         </button>

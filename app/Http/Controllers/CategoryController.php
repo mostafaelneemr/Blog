@@ -66,7 +66,6 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         try {
-
             $category = Category::findOrFail($id);
 
             $this->validate($request, [

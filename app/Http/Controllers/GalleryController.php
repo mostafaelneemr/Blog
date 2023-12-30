@@ -78,6 +78,6 @@ class GalleryController extends Controller
         $gallery->delete();
 
         session()->flash('Deleted', 'delete image successfuly');
-        return redirect(route('galleries.index'));
+        return redirect()->route('galleries.index');
     }
 }

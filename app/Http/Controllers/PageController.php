@@ -15,7 +15,6 @@ class PageController extends Controller
         return view('admin.pages.index', compact('pages'));
     }
 
-
     public function create()
     {
         return view('admin.pages.create');
@@ -68,7 +67,6 @@ class PageController extends Controller
     public function update(Request $request, $id)
     {
         try {
-
             $post = Post::findOrFail($id);
 
             if ($request->has('thumbnail')) {
